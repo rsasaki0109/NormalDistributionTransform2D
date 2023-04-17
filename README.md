@@ -11,6 +11,11 @@ python script/normal_distributions_transform.py
 ## Results
 After running the script, a plot will be displayed showing the source points (red), target points (blue), and transformed source points (green). The true and estimated transformation parameters will also be printed.
 
+```
+True transform: [0.1        0.2        0.26179939]
+Estimated transform: [0.11679415 0.28055845 0.25984399]
+```
+
 ![Result](image/result.png)
 
 

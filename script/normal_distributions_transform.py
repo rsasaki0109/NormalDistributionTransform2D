@@ -15,7 +15,7 @@ def apply_transformation(points, transform):
 def add_noise(points, scale):
     return points + np.random.normal(scale=scale, size=points.shape)
 
-def ndt_match(src_points, dst_points, resolution=1.0, max_iter=50, tol=1e-6):
+def ndt_match(src_points, dst_points, resolution=10, max_iter=20, tol=1e-5):
     src_points = np.asarray(src_points)
     dst_points = np.asarray(dst_points)
 
