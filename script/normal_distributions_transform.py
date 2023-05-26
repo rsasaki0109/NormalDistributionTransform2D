@@ -78,6 +78,16 @@ def ndt_match(src_points, dst_points, resolution=7, max_iter=20, tol=1e-5):
     # Optimize the transformation parameters.
     x0 = np.zeros(3)
     res = minimize(objective_func_vectorized, x0, method='BFGS', options={'maxiter': max_iter, 'gtol': tol})
+
+    if not res.success:
+        print("Warning: Optimization did not converge.")
+        print("Message from optimizer:", res.message)
+    else:
+        print("Optimization successfully converged.")
+
+    print("Final cost:", res.fun)
+    print("Final parameters:", res.x)
+
     return res.x
 
 def plot_results(src_points, dst_points, src_points_transformed):
